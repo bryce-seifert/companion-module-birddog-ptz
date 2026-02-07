@@ -1,6 +1,6 @@
 {
 	"name": "birddog-ptz",
-	"version": "3.6.2",
+	"version": "3.7.0-beta1",
 	"main": "index.js",
 	"scripts": {
 		"format": "prettier -w .",
@@ -15,18 +15,18 @@
 		"url": "git+https://github.com/bitfocus/companion-module-birddog-ptz.git"
 	},
 	"dependencies": {
-		"@companion-module/base": "~1.12.1",
+		"@companion-module/base": "~1.13.1",
 		"node-fetch": "^3.3.2",
-		"ws": "^8.18.3"
+		"ws": "^8.19.0"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^2.6.1",
+		"@companion-module/tools": "~2.5.0",
 		"eslint": "^9.39.2",
-		"prettier": "^3.7.4"
+		"prettier": "^3.8.1"
 	},
 	"engines": {
 		"node": "^22.12"
 	},
 	"prettier": "@companion-module/tools/.prettierrc.json",
-	"packageManager": "yarn@4.11.0"
+	"packageManager": "yarn@4.12.0"
 }

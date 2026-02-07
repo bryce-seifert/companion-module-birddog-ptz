@@ -629,14 +629,14 @@ class BirdDogPTZInstance extends InstanceBase {
 				.then((data) => {
 					let model = data
 					if (model) {
-						model = model.replace(/BirdDog| |_/g, '')
-						this.getCameraFW(this.checkCameraModel(model))
+						model = model.replace(/BirdDog| |_|"/g, '')
+						this.getCameraFW(this.checkCameraModel(model.trim()))
 					} else if (!model) {
 						this.log(
 							'error',
 							"'BirdDog Model` unrecognized:\n" +
-								'\tIf this device is a camera, please upgrade your BirdDog camera to the latest LTS firmware to use this module\n' +
-								"\tIf this device is a KBD, please select 'KBD' for 'BirdDog Model' when creating the connection",
+							'\tIf this device is a camera, please upgrade your BirdDog camera to the latest LTS firmware to use this module\n' +
+							"\tIf this device is a KBD, please select 'KBD' for 'BirdDog Model' when creating the connection",
 						)
 						this.updateStatus('connection_failure')
 						if (this.timers.pollCameraStatus !== undefined) {
@@ -749,17 +749,15 @@ class BirdDogPTZInstance extends InstanceBase {
 	checkCameraModel(detectedModel) {
 		//this.log('debug','---- In checkCameraModel with detectedModel as', detectedModel)
 		let model = CHOICES.CAMERAS.find((element) => {
-			// this.log('debug','---- Checking element ', element)
 			if (element.id === detectedModel) {
-				return detectedModel
-			} else if (element?.other) {
-				let tempArray = Object.entries(element)
-				return tempArray[2][1].includes(detectedModel)
-			} else {
-				// this.log('debug','---- Returning False for ', element)
-				return false
+				return true
 			}
+			if (element.other && element.other.includes(detectedModel)) {
+				return true
+			}
+			return false
 		})
+
 		if (model) {
 			this.log('info', `Detected camera model: ${model.id}`)
 			this.log('debug', '---- Detected camera model: ' + model.id)

@@ -31,6 +31,7 @@ export default {
 		{ id: 'X1Ultra', label: 'X1 Ultra', other: ['X1 Ultra'] },
 		{ id: 'X4Ultra', label: 'X4 Ultra', other: ['X4 Ultra'] },
 		{ id: 'X5Ultra', label: 'X5 Ultra', other: ['X5 Ultra', 'x5 Ultra'] },
+		{ id: 'XLUltra', label: 'XL Ultra', other: ['XL Ultra'] },
 		{ id: 'MAKIUltra', label: 'MAKI Ultra', other: ['MAKI Ultra'] },
 		{ id: 'MAX', label: 'MAX' },
 		{ id: 'P100', label: 'P100' },

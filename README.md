@@ -8,6 +8,11 @@ See [HELP.md](https://github.com/bitfocus/companion-module-birddog-ptz/blob/main
 
 ## Changelog
 
+### v3.7.0
+
+- New
+  - Add support for XL Ultra camera
+
 ### v3.6.2
 
 - Fix
